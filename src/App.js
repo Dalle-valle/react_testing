@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { checkInfo, checkBeers } from "./components/rest";
+import Main from "./components/Main";
+import Loader from "./components/Loader";
+import "./App.css";
 
 function App() {
+  const [data, setData] = useState({});
+  const [beers, setBeers] = useState({});
+
+  useEffect(() => {
+    checkInfo(setData);
+    checkBeers(setBeers);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {data.bar && beers[0] && <Main data={data} beers={beers} />}
+      {!data.bar && <Loader />}
     </div>
   );
 }
