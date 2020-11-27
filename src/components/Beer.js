@@ -5,7 +5,7 @@ export default function Beer(props) {
   const beerDesc = "w";
   return (
     <div>
-      <h2>{props.name}</h2>
+      <h2 className="beer_holder">{props.name}</h2>
     </div>
   );
 }
