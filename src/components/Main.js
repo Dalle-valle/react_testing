@@ -19,11 +19,7 @@ export default function Main(props) {
           return <Beer name={beer.name} />;
         })}
       </main>
-      <Button />
       <Order />
-      <Checkout />
-      <Checkout />
-      <Button color="primary">button</Button>
       <Checkout />
     </Panel>
   );
