@@ -7,15 +7,37 @@ import "./App.css";
 function App() {
   const [data, setData] = useState({});
   const [beers, setBeers] = useState({});
-
+  const [orders, setOrders] = useState([]);
   useEffect(() => {
-    checkInfo(setData);
+    checkInfo(gotData);
     checkBeers(setBeers);
   }, []);
+  function gotData(data) {
+    console.log(data);
+    setData(data);
+    const nextOrders = data.taps.map((tap) => {
+      return {
+        name: tap.beer,
+        amount: 0,
+      };
+    });
+    setOrders(nextOrders);
+  }
+  function orderChanged(name, evt) {
+    console.log(name, evt.target.value);
+    const nextOrders = orders.map((order) => {
+      if (order.name === name) {
+        console.log(name);
+        order.amount = evt.target.value;
+      }
+      return order;
+    });
+    setOrders(nextOrders);
+  }
 
   return (
     <div className="App">
-      {data.bar && beers[0] && <Main data={data} beers={beers} />}
+      {data.bar && beers[0] && <Main orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
       {!data.bar && <Loader />}
     </div>
   );
