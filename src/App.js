@@ -8,6 +8,7 @@ function App() {
   const [data, setData] = useState({});
   const [beers, setBeers] = useState({});
   const [orders, setOrders] = useState([]);
+
   useEffect(() => {
     checkInfo(gotData);
     checkBeers(setBeers);
