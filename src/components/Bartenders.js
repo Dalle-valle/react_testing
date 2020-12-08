@@ -1,0 +1,17 @@
+import React from "react";
+
+export default function Bartenders(props) {
+  return (
+    <section className="bartenders-display">
+      <h2>Bartenders</h2>
+      {props.data.bartenders.map((person) => {
+        return (
+          <div>
+            <img className="astronaut" src="https://freedesignfile.com/upload/2017/08/astronaut-icon-vector.png" />
+            <p>{person.name}</p>
+          </div>
+        );
+      })}
+    </section>
+  );
+}

@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "date-fns": "^2.16.1",
     "muicss": "^0.10.2"
   }
 }

@@ -1,4 +1,37 @@
-.beer_holder {
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap");
+@import url("https://use.typekit.net/hzm0poc.css");
+
+:root {
+  --primary-color: #cbc8d3;
+  --sec-color: #196177;
+  --background-color: #0d052f98;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.dashboard {
+  width: 100vw;
+  height: 100%;
+  background-image: url("bigmobile-04.png");
+  background-size: cover;
+  background-color: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+.beer-holder {
   text-align: center;
 }
 
@@ -10,4 +43,112 @@
 .loaders {
   width: 100px;
   height: 100px;
+}
+
+.astronaut,
+.rocket,
+.rocket2 {
+  width: 100px;
+  height: auto;
+}
+
+.beer-icon {
+  height: 70px;
+  width: auto;
+}
+
+.welcome {
+  background-color: var(--background-color);
+  margin: 10px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+h2 {
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
+p {
+  padding: 10px 15px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.plus-minus {
+  float: right;
+  margin-right: 15px;
+}
+
+.closing-display {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  margin: 10px 15px;
+  backdrop-filter: blur(5px);
+}
+
+.closing-display p {
+  font-size: 22px;
+}
+
+.time {
+  display: block;
+  font-family: bdr-mono, sans-serif;
+  font-weight: 400;
+}
+
+.big-button {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  margin: 10px 15px;
+  backdrop-filter: blur(5px);
+}
+
+.big-button p {
+  text-transform: uppercase;
+  font-size: 26px;
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.big-icon {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.logo {
+  margin: 10px 15px;
+}
+
+.bold {
+  font-size: 26px;
+  padding: 0px 15px 10px 15px;
+  font-weight: 700;
+}
+
+.beer-pop {
+  border-bottom: 1px solid var(--primary-color);
+  margin: 0 15px;
+}
+
+.beer-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: end;
+  padding: 30px 15px 15px 15px;
+  font-size: 18px;
+}
+
+.mobile-nav {
+  height: 65px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: var(--sec-color);
+  width: 100%;
 }

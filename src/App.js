@@ -12,6 +12,14 @@ function App() {
     checkInfo(gotData);
     checkBeers(setBeers);
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      checkInfo(gotData);
+      checkBeers(setBeers);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   function gotData(data) {
     console.log(data);
     setData(data);
