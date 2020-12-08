@@ -23,3 +23,9 @@ export function post(payload, callback) {
       callback(data);
     });
 }
+
+export function checkPrice(callback) {
+  fetch("beerprices.json")
+    .then((e) => e.json())
+    .then((prices) => callback(prices));
+}

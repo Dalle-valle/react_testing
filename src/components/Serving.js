@@ -3,7 +3,6 @@ import React from "react";
 export default function Serving(props) {
   return (
     <section className="servingDisplay">
-      <h2>Currently serving</h2>
       {props.data.serving.map((person) => {
         return (
           <div>

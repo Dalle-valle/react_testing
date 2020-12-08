@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap");
 @import url("https://use.typekit.net/hzm0poc.css");
 
+/* custom variables */
 :root {
   --primary-color: #cbc8d3;
   --sec-color: #196177;
   --background-color: #0d052f98;
+  --border-color: #616182;
 }
+
+/* general styling */
 body {
   margin: 0;
   padding: 0;
@@ -21,6 +25,7 @@ body {
   background-image: url("bigmobile-04.png");
   background-size: cover;
   background-color: transparent;
+  padding-bottom: 80px;
 }
 
 .hidden {
@@ -57,7 +62,8 @@ body {
   width: auto;
 }
 
-.welcome {
+.welcome,
+.all-beers {
   background-color: var(--background-color);
   margin: 10px 15px;
   border-radius: 8px;
@@ -109,6 +115,7 @@ p {
   font-size: 26px;
   text-align: center;
   padding: 0 0 10px 0;
+  font-weight: 700;
 }
 
 .main-grid {
@@ -131,8 +138,10 @@ p {
   font-weight: 700;
 }
 
-.beer-pop {
-  border-bottom: 1px solid var(--primary-color);
+.beer-pop,
+.one-beer,
+.beer-desc {
+  border-bottom: 1px solid var(--border-color);
   margin: 0 15px;
 }
 
@@ -144,6 +153,12 @@ p {
   font-size: 18px;
 }
 
+.queue-display p:not(.bold) {
+  padding: 15px 15px 0 15px;
+}
+
+/* Mobile nav */
+
 .mobile-nav {
   height: 65px;
   position: fixed;
@@ -151,4 +166,65 @@ p {
   left: 0;
   background: var(--sec-color);
   width: 100%;
+}
+
+.mobile-nav ul {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.mobile-nav li {
+  list-style: none;
+  display: inline-block;
+}
+
+.nav-icon {
+  height: 50px;
+  width: auto;
+  margin: auto 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Styling for the container with beer info */
+.all-beers {
+  padding-bottom: 20px;
+}
+
+.beer-price {
+  font-weight: 700;
+  text-align: end;
+}
+
+.beer-container {
+  padding-bottom: 10px;
+}
+.beer-container p,
+.beer-container h2 {
+  padding: 0px;
+}
+
+.beer-desc {
+  padding: 30px 0;
+}
+
+.beer-alc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.beer-heading {
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid var(--primary-color);
+  margin: 0 15px;
+  padding: 15px 0;
+}
+
+.beer-title {
+  text-transform: uppercase;
+  margin: 25px 0 0 0;
 }

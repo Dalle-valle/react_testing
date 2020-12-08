@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function Dropdown(props) {
   const [isActive, setActive] = useState("false");
   const [isPlus, setPlus] = useState("+");
-  const addIt = "+";
+
   const handleToggle = () => {
     setActive(!isActive);
   };

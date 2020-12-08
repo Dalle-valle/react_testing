@@ -5,6 +5,8 @@ export default function Queue(props) {
 
   return (
     <section className="queue-display">
+      <p>Your number in line</p>
+      <p class="bold">X</p>
       <p>Customers in line</p>
       <p class="bold">{queueLength}</p>
       {props.data.queue.map((person) => {

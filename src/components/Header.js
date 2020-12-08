@@ -4,7 +4,7 @@ import Time from "./Time";
 export default function Header(props) {
   return (
     <section class="main-grid">
-      <img src="foobarlogo.png" className="logo" />
+      <img src="foobarlogo.png" className="logo" alt="logo" />
       <Time data={props.data} />
     </section>
   );
