@@ -5,6 +5,7 @@ import Queue from "./Queue";
 import Time from "./Time";
 import Bartenders from "./Bartenders";
 import Serving from "./Serving";
+import AllBeers from "./AllBeers";
 
 // import Dropdown from "muicss/lib/react/dropdown";
 
@@ -15,16 +16,10 @@ export default function Landing(props) {
         heading={"Welcome!"}
         paragraph={<p>Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!</p>}
       />
-      <Dropdown
-        heading={"Served today"}
-        paragraph={<p>Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!</p>}
-      />
+      <Dropdown heading={"Currently serving"} paragraph={<Serving data={props.data} />} />
       <Dropdown heading={"The queue"} paragraph={<Queue data={props.data} />} />
       <Dropdown heading={"Most popular beers"} paragraph={<Popular beers={props.beers} data={props.data} />} />
-      <Dropdown
-        heading={"Bartenders"}
-        paragraph={<p>Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!</p>}
-      />
+      <Dropdown heading={"Bartenders"} paragraph={<Bartenders data={props.data} />} />
 
       <section className="main-grid">
         <div className="big-button">
@@ -36,6 +31,7 @@ export default function Landing(props) {
           <p>Beer info</p>
         </div>
       </section>
+      <AllBeers beers={props.beers} />
     </div>
   );
 }

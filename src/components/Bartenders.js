@@ -3,7 +3,6 @@ import React from "react";
 export default function Bartenders(props) {
   return (
     <section className="bartenders-display">
-      <h2>Bartenders</h2>
       {props.data.bartenders.map((person) => {
         return (
           <div>
