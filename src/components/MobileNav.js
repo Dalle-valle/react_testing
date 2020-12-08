@@ -5,13 +5,13 @@ export default function MobileNav() {
     <section class="mobile-nav">
       <ul>
         <li>
-          <img src="homeicon.png" className="nav-icon" />
+          <img src="homeicon.png" className="nav-icon" alt="home icon" />
         </li>
         <li>
-          <img src="icons-03.png" className="nav-icon" />
+          <img src="icons-03.png" className="nav-icon" alt="nav icon" />
         </li>
         <li>
-          <img src="cart2-04.png" className="nav-icon" />
+          <img src="cart2-04.png" className="nav-icon" alt="cart icon" />
         </li>
         <li></li>
       </ul>

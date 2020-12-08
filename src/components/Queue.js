@@ -12,7 +12,7 @@ export default function Queue(props) {
       {props.data.queue.map((person) => {
         return (
           <div>
-            <img className="rocket" src="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png" />
+            <img className="rocket" src="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png" alt="rocket" />
             <p>Nr. {person.id}</p>
           </div>
         );

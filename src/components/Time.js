@@ -12,7 +12,6 @@ export default function Time(props) {
   let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-  const closing = props.data.bar.closingTime;
 
   const paddedMin = minutes.toString().padStart(2, "0");
   const paddedHr = hours.toString().padStart(2, "0");
