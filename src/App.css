@@ -146,12 +146,55 @@ h2 {
   padding: 0 15px 0 15px;
 }
 .served-today {
-  width: 100%;
+  width: 86%;
   height: 100%;
   border-radius: 10px;
 
   background-color: #0d052f7c;
   padding: 0 15px 0 15px;
 }
+.checkout label,
+.checkout input {
+  font-family: rajdhani, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--primary-color);
+  margin-left: 20px;
+  border-bottom: none;
+  width: 90%;
+}
+.checkout input p {
+  margin-left: 10px;
+}
+.cardname input {
+  border-radius: 10px;
+  margin: 0 15px 0 15px;
+  background-color: #616182;
+}
+
+.cardnumber input {
+  border-radius: 10px;
+  margin: 0 15px 0 15px;
+  background-color: #616182;
+}
+
+.expiry input {
+  border-radius: 10px;
+  margin: 0 15px 0 15px;
+  background-color: #616182;
+}
+
+.cvv input {
+  border-radius: 10px;
+  margin: 0 15px 0 15px;
+  background-color: #616182;
+}
 
 /**themes**/
+
+.mui-textfield.mui-textfield--float-label.expiry > label,
+.mui-textfield.mui-textfield--float-label.cvv > label,
+.mui-textfield.mui-textfield--float-label.cardname > label,
+.mui-textfield.mui-textfield--float-label.cardnumber > label {
+  color: var(--primary-color);
+}

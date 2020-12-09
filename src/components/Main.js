@@ -27,10 +27,10 @@ export default function Main(props) {
   props.orders.forEach((obj) => {
     // check if duplicated
     if (cleanArr.some((beer) => beer.name === obj.name)) {
-      console.log("findes");
+      console.log("exists");
     } else {
       // else push all non duplicates to the clean array
-      console.log("findes ikke");
+      console.log("doesnt exist");
       cleanArr.push(obj);
     }
   });
@@ -38,6 +38,7 @@ export default function Main(props) {
   return (
     <main className="main-panel">
       <Header />
+      <Checkout />
       <Landing />
       <h2 className="intro-heading">
         Welcome to Foobar <br />

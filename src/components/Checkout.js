@@ -1,34 +1,18 @@
 import React from "react";
+import Form from "muicss/lib/react/form";
+import Input from "muicss/lib/react/input";
+import Textarea from "muicss/lib/react/textarea";
+import Button from "muicss/lib/react/button";
 
 export default function Checkout(props) {
   return (
-    <form className="formstyle">
-      <label>
-        Name on Card:
-        <input type="text" name="name" required />
-      </label>
-      <br />
-      <br />
-      <label>
-        Card Number:
-        <input type="text" name="cardnumber" required />
-      </label>
-      <br />
-      <br />
-      <label>
-        Expiry:
-        <input type="number" name="expiry" required />
-      </label>
-      <br />
-      <br />
-      <label>
-        CVV:
-        <input type="number" name="cvv" required />
-      </label>
-      <br />
-      <br />
+    <section className="checkout">
+      <h2>Credit card information</h2>
 
-      <input type="submit" value="Submit" />
-    </form>
+      <Input label="Name on Card" floatingLabel={true} required={true} className="cardname" />
+      <Input label="Card Number" floatingLabel={true} required={true} className="cardnumber" />
+      <Input label="Expiry" floatingLabel={true} required={true} className="expiry" />
+      <Input label="CVV" floatingLabel={true} required={true} className="cvv" />
+    </section>
   );
 }
