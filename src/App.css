@@ -149,7 +149,6 @@ h2 {
   width: 86%;
   height: 100%;
   border-radius: 10px;
-
   background-color: #0d052f7c;
   padding: 0 15px 0 15px;
 }
@@ -197,4 +196,11 @@ h2 {
 .mui-textfield.mui-textfield--float-label.cardname > label,
 .mui-textfield.mui-textfield--float-label.cardnumber > label {
   color: var(--primary-color);
+}
+.button-1 {
+  color: red;
+  background-color: hotpink;
+}
+.flex-it {
+  display: flex;
 }
