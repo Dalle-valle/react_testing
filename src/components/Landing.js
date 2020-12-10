@@ -4,7 +4,6 @@ import React, { useState } from "react";
 export default function Landing() {
   const [isActive, setActive] = useState("false");
   const [isPlus, setPlus] = useState("+");
-  const addIt = "+";
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -18,7 +17,8 @@ export default function Landing() {
         <section>
           <div className="welcome-container" onClick={handlePlusOne}>
             <h2>
-              Welcome!<span className="plus-minus">{isPlus ? "+" : "-"}</span>
+              Welcome!
+              <span className="plus-minus">{isPlus ? "+" : "-"}</span>
             </h2>
             <p className={isActive ? "test1" : "test2"}>
               Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!
@@ -27,10 +27,11 @@ export default function Landing() {
         </section>
       </div>
       <section>
-        <div className="served-today">
+        <div className="served-today" onClick={handleToggle}>
           <h2>
             Served today <span className="plus-minus">{isPlus ? "+" : "-"}</span>
           </h2>
+          <p className={isActive ? "test1" : "test2"}></p>
         </div>
       </section>
     </div>
