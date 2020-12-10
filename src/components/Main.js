@@ -1,6 +1,4 @@
 import React from "react";
-import Panel from "muicss/lib/react/panel";
-import Button from "muicss/lib/react/button";
 import Beer from "./Beer";
 import Checkout from "./Checkout";
 import Order from "./Order";

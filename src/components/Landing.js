@@ -12,7 +12,7 @@ export default function Landing() {
   };
 
   return (
-    <div>
+    <section>
       <div className="welcome" onClick={handleToggle}>
         <section>
           <div className="welcome-container" onClick={handlePlusOne}>
@@ -34,7 +34,7 @@ export default function Landing() {
           <p className={isActive ? "test1" : "test2"}></p>
         </div>
       </section>
-    </div>
+    </section>
   );
 }
 
