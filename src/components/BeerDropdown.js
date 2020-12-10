@@ -42,6 +42,9 @@ export default function BeerDropdown(props) {
 
           <h3 className="beer-title">Overall impression</h3>
           <p>{props.overall}</p>
+          <div class="gradient-wrapper">
+            <button className="gradient-button">Buy now</button>
+          </div>
         </div>
       </div>
     </div>
