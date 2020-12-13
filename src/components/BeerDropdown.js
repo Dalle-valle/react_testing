@@ -13,7 +13,7 @@ export default function BeerDropdown(props) {
 
   const thisBeer = props.prices.filter((beer) => beer.name === props.name);
   const beerPrice = thisBeer[0] ? thisBeer[0].price : "";
-  console.log(beerPrice);
+  // console.log(beerPrice);
 
   return (
     <div className="one-beer" onClick={handleToggle}>

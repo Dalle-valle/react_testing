@@ -23,10 +23,10 @@ export default function Main(props) {
   props.orders.forEach((obj) => {
     // check if duplicated
     if (cleanArr.some((beer) => beer.name === obj.name)) {
-      console.log("exists");
+      // console.log("exists");
     } else {
       // else push all non duplicates to the clean array
-      console.log("doesnt exist");
+      // console.log("doesnt exist");
       cleanArr.push(obj);
     }
   });

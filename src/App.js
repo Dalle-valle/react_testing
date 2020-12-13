@@ -14,7 +14,7 @@ function App() {
   }, []);
   useEffect(() => {
     const interval = setInterval(() => {
-      checkInfo(gotData);
+      checkInfo(setData);
       checkBeers(setBeers);
     }, 1000);
     return () => clearInterval(interval);
