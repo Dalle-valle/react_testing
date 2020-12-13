@@ -2,7 +2,17 @@
   --primary-color: #cbc8d3;
   --background-color: #0d052f80;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 html {
   margin: 0;
   padding: 0;
@@ -203,4 +213,24 @@ h2 {
 }
 .flex-it {
   display: flex;
+}
+#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardname > input,
+#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardnumber > input {
+  padding-left: 10px;
+}
+#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardname > label,
+#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardnumber > label,
+#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.expiry > label,
+#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cvv > label {
+  color: var(--primary-color);
+}
+
+#root > div > main > section.checkout > form > div.flex-it > div.mui-textfield.mui-textfield--float-label.expiry > input,
+#root > div > main > section.checkout > form > div.flex-it > div.mui-textfield.mui-textfield--float-label.cvv > input {
+  padding-left: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
 }

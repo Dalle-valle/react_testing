@@ -5,22 +5,23 @@ import Button from "muicss/lib/react/button";
 import { useForm } from "react-hook-form";
 
 export default function Checkout(props) {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, watch } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(watch("example")); // watch input value by passing the name of it
+  const testing = watch("card-number");
+
   return (
     <section className="checkout">
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Credit card information</h2>
 
-        <Input label="Name on Card" floatingLabel={true} required={true} className="cardname" ref={register} name="cardname" />
-        <Input label="Card Number" floatingLabel={true} ref={register({ required: true })} className="cardnumber" name="cardnumber" />
+        <Input label="Name on Card" floatingLabel={true} required={true} className="cardname" name="card-name" ref={register} />
+        <Input label="Card Number" floatingLabel={true} required={true} className="cardnumber" name="card-number" type="number" ref={register} />
         <div className="flex-it">
-          <Input label="Expiry" floatingLabel={true} required={true} className="expiry" type="number" name="expiry" />
-          <Input label="CVV" floatingLabel={true} required={true} className="cvv" type="number" name="cvv" />
+          <Input label="Expiry" floatingLabel={true} required={true} className="expiry" type="number" name="expiry" ref={register} />
+          <Input label="CVV" floatingLabel={true} required={true} className="cvv" type="number" name="cvv-" ref={register} />
         </div>
-        {errors.exampleRequired && <span>This field is required</span>}
-        <Button variant="raised" className="button-1" type="submit">
+
+        <Button variant="raised" className="button-1" type="submit" name="submit" ref={register}>
           Proceed
         </Button>
       </form>
