@@ -1,6 +1,6 @@
 import React from "react";
 import Beer from "./Beer";
-import Checkout from "./Checkout";
+import Checkamazing from "./Checkamazing";
 import Order from "./Order";
 import { post } from "./rest";
 import Landing from "./Landing";
@@ -36,7 +36,7 @@ export default function Main(props) {
   return (
     <main className="main-panel">
       <Header />
-      <Checkout />
+      <Checkamazing />
       <Landing />
       <h2 className="intro-heading">
         Welcome to Foobar <br />
