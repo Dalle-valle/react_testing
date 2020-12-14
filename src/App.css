@@ -162,7 +162,7 @@ h2 {
   background-color: #0d052f7c;
   padding: 0 15px 0 15px;
 }
-.checkout label,
+/* .checkout label,
 .checkout input {
   font-family: rajdhani, sans-serif;
   font-weight: 400;
@@ -197,7 +197,7 @@ h2 {
   border-radius: 10px;
   margin: 0 15px 0 15px;
   background-color: #616182;
-}
+} */
 
 /**themes**/
 
@@ -229,8 +229,91 @@ h2 {
 #root > div > main > section.checkout > form > div.flex-it > div.mui-textfield.mui-textfield--float-label.cvv > input {
   padding-left: 10px;
 }
-
+input {
+  border: none;
+  margin: 10px 15px 0 15px;
+  margin-bottom: 10px;
+}
+label {
+  font-family: rajdhani, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
 .checkout-1 {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+
+  grid-template-areas:
+    "info info info"
+    "label1 . . "
+    "name name name"
+    "label2 . ."
+    "number number number"
+    "label3 . label4"
+    "expiry expiry cvv"
+    ". . button";
+}
+.label1 {
+  margin-left: 15px;
+  grid-area: label1;
+}
+.label2 {
+  margin-left: 15px;
+  grid-area: label2;
+}
+.label3 {
+  margin-left: 15px;
+  grid-area: label3;
+}
+.label4 {
+  margin-left: 15px;
+  grid-area: label4;
+}
+.checkout-1 input {
+  height: 30px;
+  background-color: #616182;
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+}
+.information {
+  grid-area: info;
+}
+.cardname {
+  grid-area: name;
+}
+.cardname input {
+  margin-left: 10px;
+}
+.cardnumber {
+  grid-area: number;
+}
+.expiry {
+  grid-area: expiry;
+}
+.cvv {
+  grid-area: cvv;
+}
+.submit-button {
+  grid-area: button;
+  width: 100px;
+  height: 30px;
+  margin-left: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+  font-family: rajdhani, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--background-color);
+  color: white;
+}
+
+input {
+  font-family: rajdhani, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+
+::placeholder {
+  color: white;
 }
