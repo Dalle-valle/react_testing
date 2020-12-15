@@ -3,6 +3,7 @@ import { checkInfo, checkBeers } from "./components/rest";
 import Main from "./components/Main";
 import Loader from "./components/Loader";
 import "./App.css";
+import "./Daniel.css";
 
 function App() {
   const [data, setData] = useState({});
