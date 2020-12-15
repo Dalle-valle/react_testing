@@ -1,7 +1,7 @@
 import React from "react";
 
 import Beer from "./Beer";
-
+import Checkout from "./Checkout";
 import Order from "./Order";
 import { post } from "./rest";
 import Header from "./Header";
@@ -20,12 +20,12 @@ export default function Main(props) {
     <main className="dashboard">
       <Header data={props.data} />
       <Nav />
-      <Landing data={props.data} beers={props.beers} />
-      <form onSubmit={submit} className="hidden">
+      <Landing data={props.data} beers={props.beers} className="" />
+      <form onSubmit={submit}>
         {props.orders.map((beer) => {
           return <Beer name={beer.name} amount={beer.amount} onUpdate={props.orderChanged} />;
         })}
-        <Order />
+        <Checkout className="checkout-1" />
       </form>
     </main>
   );

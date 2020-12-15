@@ -1,34 +1,32 @@
 import React from "react";
 
-export default function Checkout(props) {
+export default function Checkamazing() {
   return (
-    <form className="formstyle">
-      <label>
-        Name on Card:
-        <input type="text" name="name" required />
+    <section className="check-wrapper">
+      <h2 className="information">Credit Card Information</h2>
+      <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" />
+      <label htmlFor="smartname" className="label1">
+        Smart Name
       </label>
-      <br />
-      <br />
-      <label>
-        Card Number:
-        <input type="text" name="cardnumber" required />
-      </label>
-      <br />
-      <br />
-      <label>
-        Expiry:
-        <input type="number" name="expiry" required />
-      </label>
-      <br />
-      <br />
-      <label>
-        CVV:
-        <input type="number" name="cvv" required />
-      </label>
-      <br />
-      <br />
 
-      <input type="submit" value="Submit" />
-    </form>
+      <input className="cardnumber" type="number" name="smartnumber" inputmode="numeric" placeholder="&nbsp;"></input>
+      <label htmlFor="smartnumber" className="label2">
+        Smart Number
+      </label>
+
+      <input className="expiry" type="number" name="expiry" placeholder="&nbsp;" />
+      <label htmlFor="expiry" className="label3">
+        Expiry
+      </label>
+
+      <input className="cvv" type="text" maxlength="3" name="security" placeholder="&nbsp;" />
+      <label htmlFor="security" className="label4">
+        Cvv
+      </label>
+
+      <button className="submit-button" type="submit">
+        Place Order
+      </button>
+    </section>
   );
 }

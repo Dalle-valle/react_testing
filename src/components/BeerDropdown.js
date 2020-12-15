@@ -13,7 +13,7 @@ export default function BeerDropdown(props) {
 
   const thisBeer = props.prices.filter((beer) => beer.name === props.name);
   const beerPrice = thisBeer[0] ? thisBeer[0].price : "";
-  console.log(beerPrice);
+  // console.log(beerPrice);
 
   return (
     <div className="one-beer" onClick={handleToggle}>
@@ -23,39 +23,39 @@ export default function BeerDropdown(props) {
           <span className="plus-minus">{isPlus ? "+" : "-"}</span>
         </h2>
         <div className="beer-cat">
-        <p>{props.cat}</p>
+          <p>{props.cat}</p>
         </div>
-        <div class="beer-alc">
+        <div className="beer-alc">
           <p className="beer-percent">{props.vol}%</p>
           <h2 className="beer-price">{beerPrice} DKK</h2>
         </div>
         <div className={isActive ? "hidden" : "block"}>
           <div className="col">
-          <div className="aroma">
-           <h3 className="beer-title">Aroma</h3>
-           <p>{props.aroma}</p>
-        </div>
+            <div className="aroma">
+              <h3 className="beer-title">Aroma</h3>
+              <p>{props.aroma}</p>
+            </div>
 
-         <div className="appearance">
-          <h3 className="beer-title">Appearance</h3>
-          <p>{props.appearance}</p>
-        </div>
-        </div>
-        <div className="col">
-        <div className="flavor">
-          <h3 className="beer-title">Flavor</h3>
-          <p>{props.flavor}</p>
+            <div className="appearance">
+              <h3 className="beer-title">Appearance</h3>
+              <p>{props.appearance}</p>
+            </div>
           </div>
+          <div className="col">
+            <div className="flavor">
+              <h3 className="beer-title">Flavor</h3>
+              <p>{props.flavor}</p>
+            </div>
 
-          <div className="mouthfeel">
-          <h3 className="beer-title">Mouthfeel</h3>
-          <p>{props.mouthfeel}</p>
-          </div>
+            <div className="mouthfeel">
+              <h3 className="beer-title">Mouthfeel</h3>
+              <p>{props.mouthfeel}</p>
+            </div>
 
-          <div className="impression">
-          <h3 className="beer-title">Overall impression</h3>
-          <p>{props.overall}</p>
-          </div>
+            <div className="impression">
+              <h3 className="beer-title">Overall impression</h3>
+              <p>{props.overall}</p>
+            </div>
           </div>
         </div>
       </div>

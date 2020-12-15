@@ -12,7 +12,10 @@ export default function AllBeers(props) {
   return (
     <section className="all-beers">
       <h1>Beer information</h1>
-      <p className="beer-desc">Here you can read about the selection of beers we brew. <br/>Be aware of not all beers are on tap at all times.</p>
+      <p className="beer-desc">
+        Here you can read about the selection of beers we brew. <br />
+        Be aware of not all beers are on tap at all times.
+      </p>
       {beerArray.map((beer) => {
         return (
           <BeerDropdown

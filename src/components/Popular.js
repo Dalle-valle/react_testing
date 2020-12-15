@@ -17,17 +17,17 @@ export default function Popular(props) {
   sortedBeer.forEach((obj) => {
     // check if duplicated
     if (cleanArr.some((beer) => beer.beer === obj.beer)) {
-      console.log("findes");
+      // console.log("findes");
     } else {
       // else push all non duplicates to the clean array
-      console.log("findes ikke");
+      // console.log("findes ikke");
       cleanArr.push(obj);
     }
   });
 
-  console.log(cleanArr);
+  // console.log(cleanArr);
 
-  console.log(sortedBeer);
+  // console.log(sortedBeer);
   let popularBeers = [];
 
   showPopular();
@@ -42,8 +42,8 @@ export default function Popular(props) {
         let beerIndex = popularBeers.findIndex((obj) => obj.beer === beer.beer);
         return (
           <div>
-            <p class="beer-pop">
-              <span class="bold">{beerIndex + 1}. </span>
+            <p className="beer-pop">
+              <span className="bold">{beerIndex + 1}. </span>
               {beer.beer}
             </p>
           </div>

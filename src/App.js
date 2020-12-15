@@ -15,14 +15,14 @@ function App() {
   }, []);
   useEffect(() => {
     const interval = setInterval(() => {
-      checkInfo(gotData);
+      checkInfo(setData);
       checkBeers(setBeers);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   function gotData(data) {
-    console.log(data);
+    // console.log(data);
     setData(data);
     const nextOrders = data.taps.map((tap) => {
       return {
@@ -33,10 +33,10 @@ function App() {
     setOrders(nextOrders);
   }
   function orderChanged(name, evt) {
-    console.log(name, evt.target.value);
+    // console.log(name, evt.target.value);
     const nextOrders = orders.map((order) => {
       if (order.name === name) {
-        console.log(name);
+        // console.log(name);
         order.amount = evt.target.value;
       }
       return order;
