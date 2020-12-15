@@ -260,8 +260,7 @@ input {
   grid-area: info;
   margin-left: 15px;
 }
-.information h2 {
-}
+
 .cardname {
   grid-area: name;
 }

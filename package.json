@@ -45,7 +45,12 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "muicss": "^0.10.2",
     "parcel-bundler": "^1.12.4"
+=======
+    "date-fns": "^2.16.1",
+    "muicss": "^0.10.2"
+>>>>>>> 252f21fc37ee9a8f6f85b44ba205be9b4906ae77
   }
 }

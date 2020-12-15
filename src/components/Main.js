@@ -7,10 +7,6 @@ import Landing from "./Landing";
 import Header from "./Header";
 
 export default function Main(props) {
-  console.log(props);
-
-  const closing = props.data.bar.closingTime;
-
   function submit(e) {
     e.preventDefault();
     const payload = props.orders.filter((order) => order.amount > 0);
