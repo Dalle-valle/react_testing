@@ -36,13 +36,13 @@ export default function Main(props) {
   return (
     <main className="main-panel">
       <Header />
-      <Checkamazing />
+
       <Landing />
       <h2 className="intro-heading">
         Welcome to Foobar <br />
         May we take your order?
       </h2>
-
+      <Checkamazing />
       <form className="form" onSubmit={submit}>
         {cleanArr.map((beer, index) => {
           return <Beer key={index} name={beer.name} amount={beer.amount} onUpdate={props.orderChanged} />;

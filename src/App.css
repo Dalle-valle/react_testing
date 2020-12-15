@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 :root {
   --primary-color: #cbc8d3;
   --background-color: #0d052f80;
@@ -8,7 +11,10 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+input {
+  appearance: none;
+  -webkit-appearance: none;
+}
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
@@ -201,30 +207,6 @@ h2 {
 
 /**themes**/
 
-.mui-textfield.mui-textfield--float-label.expiry > label,
-.mui-textfield.mui-textfield--float-label.cvv > label,
-.mui-textfield.mui-textfield--float-label.cardname > label,
-.mui-textfield.mui-textfield--float-label.cardnumber > label {
-  color: var(--primary-color);
-}
-.button-1 {
-  color: red;
-  background-color: hotpink;
-}
-.flex-it {
-  display: flex;
-}
-#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardname > input,
-#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardnumber > input {
-  padding-left: 10px;
-}
-#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardname > label,
-#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cardnumber > label,
-#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.expiry > label,
-#root > div > main > section.checkout > form > div.mui-textfield.mui-textfield--float-label.cvv > label {
-  color: var(--primary-color);
-}
-
 #root > div > main > section.checkout > form > div.flex-it > div.mui-textfield.mui-textfield--float-label.expiry > input,
 #root > div > main > section.checkout > form > div.flex-it > div.mui-textfield.mui-textfield--float-label.cvv > input {
   padding-left: 10px;
@@ -234,13 +216,12 @@ input {
   margin: 10px 15px 0 15px;
   margin-bottom: 10px;
 }
-label {
-  font-family: rajdhani, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: white;
+.check-wrapper {
+  margin: 0 auto;
+  background-color: var(--background-color);
 }
 .checkout-1 {
+  max-width: 250px;
   display: grid;
 
   grid-template-areas:
@@ -277,6 +258,9 @@ label {
 }
 .information {
   grid-area: info;
+  margin-left: 15px;
+}
+.information h2 {
 }
 .cardname {
   grid-area: name;
@@ -295,7 +279,7 @@ label {
 }
 .submit-button {
   grid-area: button;
-  width: 100px;
+  width: 150px;
   height: 30px;
   margin-left: 15px;
   margin-top: 15px;
@@ -305,6 +289,7 @@ label {
   font-style: normal;
   background-color: var(--background-color);
   color: white;
+  outline: none;
 }
 
 input {
@@ -316,4 +301,40 @@ input {
 
 ::placeholder {
   color: white;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
+}
+
+input[type="text"]:not(:placeholder-shown) + label,
+input[type="number"]:not(:placeholder-shown) + label {
+  transform: translate(5%, 40%) scale(1.1);
+  opacity: 1;
+  transition-timing-function: ease-out;
+  transition: 0.4s;
+}
+
+label {
+  place-self: center start;
+  transform-origin: 0 100%;
+  transform: translate(10px, 35px);
+  font-family: rajdhani, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  opacity: 0.7;
+  color: var(--primary-color);
+
+  will-change: transform, opacity;
+}
+input[type="text"] {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border-color: #cecece;
+  /* margin: 0; */
+
+  line-height: 1;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
