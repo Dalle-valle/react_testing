@@ -10,7 +10,7 @@ export default function Checkamazing() {
           Smart Name
         </label>
 
-        <input className="cardnumber" type="number" name="smartnumber" placeholder="&nbsp;"></input>
+        <input className="cardnumber" type="number" name="smartnumber" inputmode="numeric" placeholder="&nbsp;"></input>
         <label htmlFor="smartnumber" className="label2">
           Smart Number
         </label>

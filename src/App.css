@@ -314,6 +314,7 @@ input[type="number"]:not(:placeholder-shown) + label {
   opacity: 1;
   transition-timing-function: ease-out;
   transition: 0.4s;
+  color: white;
 }
 
 label {
