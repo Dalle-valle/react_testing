@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function Checkamazing() {
+export default function Checkout() {
   return (
     <section className="check-wrapper">
       <h2 className="information">Credit Card Information</h2>
+
       <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" />
       <label htmlFor="smartname" className="label1">
         Smart Name
