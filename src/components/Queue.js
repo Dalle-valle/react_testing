@@ -2,21 +2,37 @@ import React from "react";
 
 export default function Queue(props) {
   const queueLength = props.data.queue.length;
+  const servingLength = props.data.serving.length;
 
   return (
     <section className="queue-display">
-      <p>Your number in line</p>
-      <p class="bold">X</p>
+      <p>Currently serving</p>
+      <p class="bold">{servingLength}</p>
+      <div className="serving-container">
+      {props.data.serving.map((person) => {
+        return (
+          <figure>
+            <img className="serving-rocket" src="serving-rocket.png" alt="serving rocket" />
+            <figcaption>Nr. {person.id}</figcaption>
+          </figure>
+        );
+      })}
+      </div>
+<div className="queue-container">
       <p>Customers in line</p>
       <p class="bold">{queueLength}</p>
+
+      <div className="rocket-container">
       {props.data.queue.map((person) => {
         return (
           <div>
-            <img className="rocket" src="https://cdn4.iconfinder.com/data/icons/whsr-january-flaticon-set/512/rocket.png" alt="rocket" />
-            <p>Nr. {person.id}</p>
-          </div>
+            {/* <p>Nr. {person.id}</p> */}
+            <img className="queue-rocket" src="queue-rocket.png" alt="queue rocket" />
+         </div>
         );
       })}
+        </div>
+      </div>
     </section>
   );
 }

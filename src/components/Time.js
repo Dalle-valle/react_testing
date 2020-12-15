@@ -18,16 +18,18 @@ export default function Time(props) {
   const paddedSec = seconds.toString().padStart(2, "0");
 
   return (
-    <div className="closing-display">
+    <div>
       {closingTime > currentTime && currentTime > openingTime ? (
         <p>
-          Closing in:
+          We are closing in
           <span className="time">
             {paddedHr}:{paddedMin}:{paddedSec}
           </span>
         </p>
       ) : (
-        <h2>Closed</h2>
+        <p>We are 
+          <span className="time">Closed</span>
+        </p>
       )}
     </div>
   );

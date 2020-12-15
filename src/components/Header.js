@@ -3,9 +3,11 @@ import Time from "./Time";
 
 export default function Header(props) {
   return (
-    <section class="main-grid">
+    <header>
       <img src="foobarlogo.png" className="logo" alt="logo" />
+      <section className="dash-comp closing-display"> 
       <Time data={props.data} />
-    </section>
+      </section>
+    </header>
   );
 }

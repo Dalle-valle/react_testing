@@ -6,7 +6,7 @@ import Order from "./Order";
 import { post } from "./rest";
 import Header from "./Header";
 import Landing from "./Landing";
-import MobileNav from "./MobileNav";
+import Nav from "./Nav";
 
 export default function Main(props) {
   function submit(e) {
@@ -19,6 +19,7 @@ export default function Main(props) {
   return (
     <main className="dashboard">
       <Header data={props.data} />
+      <Nav />
       <Landing data={props.data} beers={props.beers} />
       <form onSubmit={submit} className="hidden">
         {props.orders.map((beer) => {
@@ -26,7 +27,6 @@ export default function Main(props) {
         })}
         <Order />
       </form>
-      <MobileNav />
     </main>
   );
 }

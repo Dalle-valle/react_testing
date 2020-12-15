@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Dropdown(props) {
+export default function WelcomeDropdown(props) {
   const [isActive, setActive] = useState("false");
   const [isPlus, setPlus] = useState("+");
 
@@ -14,11 +14,11 @@ export default function Dropdown(props) {
   return (
       <section className="dash-comp" onClick={handleToggle}>
         <div className="comp-container" onClick={handlePlusOne}>
-          <h2>
+          <h1>
             {props.heading}
-            <span className="plus-minus">{isPlus ? "+" : "-"}</span>
-          </h2>
-          <div className={isActive ? "hidden" : "block"}>{props.paragraph}</div>
+            <span className="plus-minus">{isPlus ? "-" : "+"}</span>
+          </h1>
+          <div className={isActive ? "block" : "hidden"}>{props.paragraph}</div>
         </div>
       </section>
   );

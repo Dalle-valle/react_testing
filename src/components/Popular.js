@@ -49,7 +49,6 @@ export default function Popular(props) {
           </div>
         );
       })}
-      <p class="beer-link">Read more</p>
     </section>
   );
 }
