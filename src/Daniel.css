@@ -314,3 +314,18 @@ input[type="number"] {
   border-radius: 10px;
   margin: 15px;
 }
+
+.orders-main {
+  background-color: rebeccapurple;
+}
+
+.checkout-main {
+  background-color: rosybrown;
+}
+
+.succes-main {
+  background-color: hotpink;
+}
+.proceed {
+  transform: translateX(10vw);
+}

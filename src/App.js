@@ -9,6 +9,11 @@ function App() {
   const [data, setData] = useState({});
   const [beers, setBeers] = useState({});
   const [orders, setOrders] = useState([]);
+  const [page, setPage] = useState("home");
+
+  function changePage(page) {
+    setPage(page);
+  }
   useEffect(() => {
     checkInfo(gotData);
     checkBeers(setBeers);
@@ -46,7 +51,7 @@ function App() {
 
   return (
     <div className="App">
-      {data.bar && beers[0] && <Main orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
+      {data.bar && beers[0] && <Main changePage={changePage} page={page} orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
       {!data.bar && <Loader />}
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Checkout() {
+export default function Checkout({ continueSucces }) {
   return (
     <>
-      <section className="check-wrapper step2">
+      <section className="check-wrapper">
         <h2 className="information">Credit Card Information</h2>
 
         <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" />
@@ -21,28 +21,14 @@ export default function Checkout() {
           Expiry
         </label>
 
-        <input className="cvv" type="text" maxlength="3" name="security" placeholder="&nbsp;" />
+        <input className="cvv" type="text" maxLength="3" name="security" placeholder="&nbsp;" />
         <label htmlFor="security" className="label4">
           Cvv
         </label>
 
-        <button className="submit-button" type="submit">
+        <button className="submit-button" type="submit" onClick={continueSucces}>
           Place Order
         </button>
-      </section>
-      <section className="step3">
-        <div className="wrap-it">
-          <img src="succes.png" alt="succes" />
-          <h2>PAYMENT SUCCESFUL!</h2>
-          <div className="orderings">
-            <p>3 x el Jefe</p>
-            <h2>Need component here</h2>
-            <p>Total: 32kr</p>
-          </div>
-          <button type="button" className="back-button">
-            BACK
-          </button>
-        </div>
       </section>
     </>
   );
