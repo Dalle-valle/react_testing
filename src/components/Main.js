@@ -43,33 +43,37 @@ export default function Main(props) {
     <main className="dashboard">
       <div className="">
         <Header data={props.data} />
-        {props.page === "home" ? <Landing data={props.data} beers={props.beers} /> : null}
+        {props.page === "home" ? (
+          <Landing data={props.data} beers={props.beers} className={props.page === "home" ? ".nav-svg-container-1" : null} />
+        ) : null}
 
         <Nav changePage={props.changePage} />
       </div>
 
-      {props.page === "beers" ? (
+      {props.page === "buy" ? (
         <form onSubmit={submit} className="orders-main">
           <section className={step === 0 ? "block" : "hidden"}>
             {cleanArr.map((beer, index) => {
               return <Beer key={index} name={beer.name} amount={beer.amount} onUpdate={props.orderChanged} />;
             })}
           </section>
-          <h2>Order</h2>
-          {cleanArr
-            .filter((order) => order.amount > 0)
-            .map((beer, index) => {
-              return (
-                <>
-                  <p className="order-text" key={index}>
-                    {beer.name} x {beer.amount}
-                  </p>
-                </>
-              );
-            })}
-          <button type="button" className="proceed" onClick={() => setStep(1)}>
-            Proceed
-          </button>
+          <div className="">
+            <h2>Order</h2>
+            <button type="button" className="proceed" onClick={() => setStep(1)}>
+              Proceed
+            </button>
+            {cleanArr
+              .filter((order) => order.amount > 0)
+              .map((beer, index) => {
+                return (
+                  <>
+                    <p className="order-text" key={index}>
+                      {beer.name} x {beer.amount}
+                    </p>
+                  </>
+                );
+              })}
+          </div>
 
           <section className={step === 1 ? "block checkout-main" : "hidden checkout-main"}>
             <Checkout continueSucces={continueSucces} />

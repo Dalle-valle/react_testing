@@ -8,18 +8,18 @@ export default function Nav(props) {
     fetch("nav.svg")
       .then((response) => response.text())
       .then((svgData) => {
-        document.querySelector(".nav-svg-container").innerHTML = svgData;
+        document.querySelector(".nav-svg-container-1").innerHTML = svgData;
       });
 
     return (
       <nav>
         <img src="foobarlogo.png" className="logo" alt="logo" />
-        <div className="nav-svg-container"></div>
+        <div className="nav-svg-container-1"></div>
         <ul>
           <li onClick={() => props.changePage("home")}>
             <img src="homeicon.png" className="nav-icon" alt="home icon" />
           </li>
-          <li onClick={() => props.changePage("beers")}>
+          <li onClick={() => props.changePage("beer")}>
             <img src="icons-03.png" className="nav-icon" alt="nav icon" />
           </li>
           <li onClick={() => props.changePage("buy")}>
