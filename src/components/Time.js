@@ -18,7 +18,7 @@ export default function Time(props) {
   const paddedSec = seconds.toString().padStart(2, "0");
 
   return (
-    <div>
+    <>
       {closingTime > currentTime && currentTime > openingTime ? (
         <p>
           We are closing in
@@ -31,6 +31,6 @@ export default function Time(props) {
           <span className="time">Closed</span>
         </p>
       )}
-    </div>
+    </>
   );
 }

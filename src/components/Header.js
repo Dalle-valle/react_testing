@@ -4,8 +4,8 @@ import Time from "./Time";
 export default function Header(props) {
   return (
     <header>
-      <img src="foobarlogo.png" className="logo" alt="logo" />
-      <section className="dash-comp closing-display"> 
+      <img onClick={() => props.changePage("home")} src="foobarlogo.png" className="logo" alt="logo" />
+      <section className="dash-comp closing"> 
       <Time data={props.data} />
       </section>
     </header>

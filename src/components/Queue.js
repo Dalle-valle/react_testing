@@ -5,8 +5,8 @@ export default function Queue(props) {
   const servingLength = props.data.serving.length;
 
   return (
-    <section className="queue-display">
-      <p>Currently serving</p>
+    <>
+      <h3>Currently serving</h3>
       <p class="bold">{servingLength}</p>
       <div className="serving-container">
       {props.data.serving.map((person) => {
@@ -19,20 +19,17 @@ export default function Queue(props) {
       })}
       </div>
 <div className="queue-container">
-      <p>Customers in line</p>
+      <h3>Customers in line</h3>
       <p class="bold">{queueLength}</p>
 
       <div className="rocket-container">
       {props.data.queue.map((person) => {
         return (
-          <div>
-            {/* <p>Nr. {person.id}</p> */}
             <img className="queue-rocket" src="queue-rocket.png" alt="queue rocket" />
-         </div>
         );
       })}
         </div>
       </div>
-    </section>
+    </>
   );
 }

@@ -6,20 +6,17 @@ export default function Dropdown(props) {
 
   const handleToggle = () => {
     setActive(!isActive);
-  };
-  const handlePlusOne = () => {
     setPlus(!isPlus);
   };
 
   return (
-      <section className="dash-comp" onClick={handleToggle}>
-        <div className="comp-container" onClick={handlePlusOne}>
+    <div  onClick={handleToggle}>
           <h2>
             {props.heading}
             <span className="plus-minus">{isPlus ? "+" : "-"}</span>
           </h2>
           <div className={isActive ? "hidden" : "block"}>{props.paragraph}</div>
-        </div>
-      </section>
+    </div>
   );
 }
+      

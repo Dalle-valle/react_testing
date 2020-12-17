@@ -6,20 +6,19 @@ export default function WelcomeDropdown(props) {
 
   const handleToggle = () => {
     setActive(!isActive);
-  };
-  const handlePlusOne = () => {
     setPlus(!isPlus);
   };
+  // const handlePlusOne = () => {
+  //   setPlus(!isPlus);
+  // };
 
   return (
-      <section className="dash-comp" onClick={handleToggle}>
-        <div className="comp-container" onClick={handlePlusOne}>
+      <section className="welcome dash-comp" onClick={handleToggle}>
           <h1>
             {props.heading}
             <span className="plus-minus">{isPlus ? "-" : "+"}</span>
           </h1>
           <div className={isActive ? "block" : "hidden"}>{props.paragraph}</div>
-        </div>
       </section>
   );
 }
