@@ -8,6 +8,9 @@ import Home from "./Home";
 import Info from "./Info";
 import Nav from "./Nav";
 import Time from "./Time";
+import Buybeer from "./Buy";
+import Payment from "./Payment";
+import Succes from "./Succes";
 
 export default function Main(props) {
   const [prices, setPrice] = useState([]);
@@ -55,7 +58,10 @@ export default function Main(props) {
 c0-9.7,3.9-18.4,10.2-24.8C16.6,38.9,25.3,35,35,35h25C79.3,35,95,19.3,95,0z"
             />
           </svg>
-          <Fullform beers={props.beers} orders={props.orders} orderChanged={props.orderChanged} />
+          {/* <Fullform beers={props.beers} orders={props.orders} orderChanged={props.orderChanged} /> */}
+          <Buybeer beers={props.beers} orders={props.orders} orderChanged={props.orderChanged} prices={props.prices} />
+          <Payment />
+          <Succes />
         </>
       ) : null}
     </main>

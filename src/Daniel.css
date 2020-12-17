@@ -73,6 +73,9 @@ h2 {
   color: var(--primary-color);
   background-color: var(--background-color);
 }
+input.btn-input {
+  border: none;
+}
 
 .order-status {
   grid-column: 1/-1;
@@ -217,10 +220,6 @@ input[type="number"] {
   height: 50px;
   width: 100px;
   background-color: black;
-}
-
-.hr-color {
-  color: HOTPINK;
 }
 
 .check-wrapper {
@@ -382,3 +381,11 @@ input[type="number"] {
 .hide {
   visibility: hidden;
 }
+
+.step2 input:valid {
+  border: 5px solid hotpink;
+}
+
+/* input:not(:placeholder-shown) {
+  border: 2px solid green;
+} */

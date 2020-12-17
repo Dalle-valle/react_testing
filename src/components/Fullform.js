@@ -3,9 +3,13 @@ import Beer from "./Beer";
 // import Time from "./Time";
 import { checkPrice } from "./rest";
 import { post } from "./rest";
+import { useForm } from "react-hook-form";
 
 export default function Fullform(props) {
   const [step, setStep] = useState(0);
+  const { register, handleSubmit, watch, errors } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   const cleanArr = [];
   const [prices, setPrice] = useState([]);
   useEffect(() => {
@@ -26,7 +30,7 @@ export default function Fullform(props) {
     }
   });
   return (
-    <form onSubmit={submit} className="form-main dash-grid">
+    <form onSubmit={submit} onSubmit={handleSubmit(onSubmit)} className="form-main dash-grid">
       <section className={step === 0 ? "step1 block" : "step1 hidden"}>
         {cleanArr.map((beer, index) => {
           return (
@@ -65,22 +69,55 @@ export default function Fullform(props) {
       <section className={step === 1 ? "step2 block" : "step2 hidden"}>
         <h2 className="information">Credit Card Information</h2>
 
-        <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" required />
+        <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" required ref={register} />
         <label htmlFor="smartname" className="label1">
           Smart Name
         </label>
 
-        <input className="cardnumber" type="text" inputmode="numeric" name="smartnumber" maxLength="16" placeholder="&nbsp;" required />
+        <input
+          className="cardnumber"
+          type="text"
+          inputMode="numeric"
+          name="smartnumber"
+          minLength="16"
+          maxLength="16"
+          placeholder="&nbsp;"
+          pattern="^[0-9]*$"
+          ref={register}
+          required
+        />
         <label htmlFor="smartnumber" className="label2">
           Smart Number
         </label>
 
-        <input className="expiry" type="text" inputmode="numeric" name="expiry" maxLength="6" placeholder="&nbsp;" required />
+        <input
+          className="expiry"
+          type="text"
+          inputMode="numeric"
+          name="expiry"
+          minLength="4"
+          maxLength="4"
+          placeholder="&nbsp;"
+          required
+          ref={register}
+          pattern="^[0-9]*$"
+        />
         <label htmlFor="expiry" className="label3">
           Expiry
         </label>
 
-        <input className="cvv" type="text" inputmode="numeric" name="security" maxLength="3" placeholder="&nbsp;" required />
+        <input
+          className="cvv"
+          type="text"
+          inputMode="numeric"
+          name="security"
+          minLength="3"
+          maxLength="3"
+          placeholder="&nbsp;"
+          required
+          ref={register}
+          pattern="^[0-9]*$"
+        />
         <label htmlFor="security" className="label4">
           Cvv
         </label>
