@@ -10,7 +10,10 @@ function App() {
   const [beers, setBeers] = useState({});
   const [orders, setOrders] = useState([]);
   const [page, setPage] = useState("home");
-
+  const [theme, setTheme] = useState("night");
+  function themeActive() {
+    setTheme(!theme);
+  }
   function changePage(page) {
     setPage(page);
   }
@@ -50,7 +53,11 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={theme ? "app day" : "app night"}>
+      <button onClick={() => themeActive("night")} className="button-theme">
+        Switch Theme
+      </button>
+
       {data.bar && beers[0] && <Main changePage={changePage} page={page} orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
       {!data.bar && <Loader />}
     </div>

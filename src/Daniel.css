@@ -350,3 +350,29 @@ input[type="number"] {
 .nav-svg-container-3 {
   transform: translateY(59vh);
 }
+
+/** Night Theme **/
+.night {
+  --primary-color: #cbc8d3;
+  --sec-color: #196177;
+  --background-color: #0d052f98;
+  --border-color: #616182;
+  --text-color: #9f9fbb;
+  --background-image-desk: url("bg-night.png");
+  --background-image-mob: url("bg-night-mob.png");
+}
+
+/** Day Theme **/
+.day {
+  --primary-color: #ffdada;
+  --sec-color: #b0527f7e;
+  --background-color: #b0527f84;
+  --border-color: #561b46;
+  --text-color: #ffe3f1;
+  --background-image-desk: url("bg-day.png");
+  --background-image-mob: url("bg-day-mob.png");
+}
+
+.button-theme {
+  float: right;
+}
