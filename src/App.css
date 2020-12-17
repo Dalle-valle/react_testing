@@ -13,6 +13,7 @@ CUSTOM VARIABLES
   --desk-nav-color: #271f48;
   --border-color: #616182;
   --text-color: #9f9fbb;
+  --theme-button: url("night-icon.png");
 }
 
 /** Night Theme **/
@@ -25,6 +26,7 @@ CUSTOM VARIABLES
   --desk-nav-color: #271f48;
   --background-image-desk: url("bg-night.png");
   --background-image-mob: url("bg-night-mob.png");
+  --theme-button: url("night-icon.png");
 }
 
 /** Day Theme **/
@@ -37,6 +39,7 @@ CUSTOM VARIABLES
   --desk-nav-color: #cf8a5c;
   --background-image-desk: url("bg-day.png");
   --background-image-mob: url("bg-day-mob.png");
+  --theme-button: url("day-icon.png");
 }
 
 /* .button-theme {
@@ -112,9 +115,16 @@ button {
 
 .button-theme {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10%;
+  left: 15px;
   z-index: 900;
+  height: 50px;
+  width: 50px;
+  background-image: var(--theme-button);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  transition: 0.3s;
 }
 
 .dashboard {
@@ -217,6 +227,32 @@ button {
 .loaders {
   width: 100px;
   height: 100px;
+}
+
+.btn-arrow span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-arrow span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: -5px;
+  right: -10px;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+
+.btn-arrow:hover span {
+  padding-right: 18px;
+}
+
+.btn-arrow:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 /***************************
@@ -524,7 +560,8 @@ nav li {
   cursor: pointer;
 }
 
-.nav-icon:hover {
+.nav-icon:hover,
+.button-theme:hover {
   transform-origin: center;
   transform: scale(1.2);
 }
@@ -703,6 +740,10 @@ input[type="number"] {
     width: 100%;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .button-theme {
+    top: 30%;
   }
 
   nav li {

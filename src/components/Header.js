@@ -6,7 +6,7 @@ export default function Header(props) {
     <header>
       <img onClick={() => props.changePage("home")} src="foobarlogo.png" className="logo" alt="logo" />
       <section className="dash-comp closing"> 
-      <Time data={props.data} />
+      <Time data={props.data} changeTheme={props.changeTheme}/>
       </section>
     </header>
   );

@@ -46,7 +46,7 @@ export default function Home(props) {
       </section>
 
       <section className="dash-comp closing">
-      <Time data={props.data} />
+      <Time data={props.data} changeTheme={props.changeTheme} />
       </section>
 
       <section className="dash-buttons">

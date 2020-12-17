@@ -26,7 +26,7 @@ export default function Info(props) {
     </section>
 
       <section className="dash-comp closing">
-      <Time data={props.data} />
+      <Time data={props.data} changeTheme={props.changeTheme}/>
       </section>
 
       <section className="popular dash-comp">

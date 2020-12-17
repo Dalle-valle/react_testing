@@ -43,15 +43,15 @@ export default function Main(props) {
 
   return (
     <main className="dashboard">
-      <Header data={props.data} changePage={props.changePage}/>
+      <Header data={props.data} changePage={props.changePage} changeTheme={props.changeTheme}/>
       <Nav changePage={props.changePage}/>
 
         {props.page === "home" ? (
-        <Home data={props.data} beers={props.beers} changePage={props.changePage}/>
+        <Home data={props.data} beers={props.beers} changePage={props.changePage} changeTheme={props.changeTheme}/>
         ) : null}
 
       {props.page === "beer" ? (
-      <Info data={props.data} beers={props.beers} changePage={props.changePage}/>
+      <Info data={props.data} beers={props.beers} changePage={props.changePage} changeTheme={props.changeTheme}/>
       ) : null}
 
 {props.page === "buy" ? (
@@ -65,7 +65,7 @@ c0-9.7,3.9-18.4,10.2-24.8C16.6,38.9,25.3,35,35,35h25C79.3,35,95,19.3,95,0z"/>
         <div className="all-beers">
             <h1>Our beers</h1>
              <div className="buy-intro">
-            <h2>Welcome to FooBar<br/>May we take your order?</h2>
+            <h2>Welcome to FooBar<br/>may we take your order?</h2>
             <p>Be aware of not all beers are on tap at all times, so the beers you see here are the beers we have on tap at the moment.</p>
             <p>All beers are served in 0.5L glasses</p>
             </div>
@@ -75,7 +75,7 @@ c0-9.7,3.9-18.4,10.2-24.8C16.6,38.9,25.3,35,35,35h25C79.3,35,95,19.3,95,0z"/>
         </div>
           </section>
           <section className="dash-comp closing">
-      <Time data={props.data} />
+      <Time data={props.data} changeTheme={props.changeTheme} />
       </section>
           <section className="order dash-comp">
             <div className="order-list-container">
@@ -93,7 +93,7 @@ c0-9.7,3.9-18.4,10.2-24.8C16.6,38.9,25.3,35,35,35h25C79.3,35,95,19.3,95,0z"/>
             );
           })}
           </div>
-          <button className="buttons" onClick={()=>setStep(1)}>Proceed</button>
+          <button className="buttons btn-arrow" onClick={()=>setStep(1)}><span>Proceed</span></button>
           </section>
         <section className={step === 1 ? "block checkout-main dash-comp" : "hidden checkout-main dash-comp"}>
           <Checkout />

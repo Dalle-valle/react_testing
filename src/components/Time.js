@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function Time(props) {
   const today = new Date();
@@ -31,6 +31,7 @@ export default function Time(props) {
           <span className="time">Closed</span>
         </p>
       )}
+           <button onClick={() => props.changeTheme("night")} className="button-theme"></button>
     </>
   );
 }
