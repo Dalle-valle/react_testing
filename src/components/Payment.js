@@ -1,6 +1,6 @@
 export default function Payment() {
   return (
-    <>
+    <form>
       <h2 className="information">Credit Card Information</h2>
 
       <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" required />
@@ -56,6 +56,6 @@ export default function Payment() {
       {/* <button className="submit-button" type="submit" onClick={() => setStep(2)}>
         Place Order
       </button> */}
-    </>
+    </form>
   );
 }
