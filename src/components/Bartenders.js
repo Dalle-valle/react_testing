@@ -6,7 +6,10 @@ export default function Bartenders(props) {
       {props.data.bartenders.map((person) => {
         return (
           <figure class="astronaut-container">
-            <img className="astronaut" src="https://freedesignfile.com/upload/2017/08/astronaut-icon-vector.png" alt="bartender" />
+            {person.name === "Peter" ? <img className="astronaut" src={person.status === "WORKING" ? "astrpurple.gif" : "astr3-05.png"} alt="bartender" /> : ""}
+            {person.name === "Dannie" ? <img className="astronaut" src={person.status === "WORKING" ? "astrpink.gif" : "pinkastr-05.png"} alt="bartender" /> : ""}
+            {person.name === "Jonas" ? <img className="astronaut" src={person.status === "WORKING" ? "astrtr.gif" : "astr1-05.png"} alt="bartender" /> : ""}
+
             <figcaption>{person.name}</figcaption>
           </figure>
         );
