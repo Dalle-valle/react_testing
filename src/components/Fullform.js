@@ -42,7 +42,7 @@ export default function Fullform(props) {
           );
         })}
       </section>
-      <section className={step === 2 ? "order dash-comp block" : "order dash-comp hidden"}>
+      <section className={step === 2 ? "order dash-comp hide" : "order dash-comp grid"}>
         <div className="order-list-container">
           <h2>Your Order</h2>
           {cleanArr
