@@ -14,33 +14,33 @@ export default function Beer(props) {
   return (
     <div className="beer-desc">
       <div onClick={handleToggle}>
-      <h2 className="beer-name">
-        {props.name} ({props.info[0].alc}%)
-      <span className={isPlus ? "arrow-down" : "arrow-up"}>&#8963;</span>
-      </h2>
-      <div className="beer-cat">
-        <p>{props.info[0].category}</p>
+        <h2 className="beer-name">
+          {props.name} ({props.info[0].alc}%)
+          <span className={isPlus ? "arrow-down" : "arrow-up"}>&#8963;</span>
+        </h2>
+        <div className="beer-cat">
+          <p>{props.info[0].category}</p>
         </div>
         <div className={isActive ? "hidden" : "block"}>
           <h3>Aroma</h3>
-          <p>
-          {props.info[0].description.aroma}
+          <p>{props.info[0].description.aroma}</p>
+          <p onClick={() => props.changePage("beer")} className="read">
+            read more
           </p>
-          <p onClick={() => props.changePage("beer")} className="read">read more</p>
-          </div>
-          </div>
-          <div class="beer-alc">
-        <h2 className="beer-price">{beerPrice} DKK</h2>
-     
-      <div className="buttons">
-        <button type="button" onClick={(evt) => props.onUpdate(props.name, evt)} value={props.amount - 1}>
-          -
-        </button>
-        <input className="btn-input" type="number" value={props.amount} onChange={(evt) => props.onUpdate(props.name, evt)} />
-        <button type="button" onClick={(evt) => props.onUpdate(props.name, evt)} value={Number(props.amount) + 1}>
-          +
-        </button>
+        </div>
       </div>
+      <div className="beer-alc">
+        <h2 className="beer-price">{beerPrice} DKK</h2>
+
+        <div className="buttons">
+          <button type="button" onClick={(evt) => props.onUpdate(props.name, evt)} value={props.amount - 1}>
+            -
+          </button>
+          <input className="btn-input" type="number" value={props.amount} onChange={(evt) => props.onUpdate(props.name, evt)} />
+          <button type="button" onClick={(evt) => props.onUpdate(props.name, evt)} value={Number(props.amount) + 1}>
+            +
+          </button>
+        </div>
       </div>
     </div>
   );

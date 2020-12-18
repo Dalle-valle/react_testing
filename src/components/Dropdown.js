@@ -10,13 +10,12 @@ export default function Dropdown(props) {
   };
 
   return (
-    <div  onClick={handleToggle}>
-          <h2>
-            {props.heading}
-            <span className="plus-minus">{isPlus ? "+" : "-"}</span>
-          </h2>
-          <div className={isActive ? "hidden" : "block"}>{props.paragraph}</div>
+    <div onClick={handleToggle}>
+      <h2>
+        {props.heading}
+        <span className="plus-minus">{isPlus ? "+" : "-"}</span>
+      </h2>
+      <div className={isActive ? "hidden" : "block"}>{props.paragraph}</div>
     </div>
   );
 }
-      

@@ -744,7 +744,7 @@ FORM
 .wrap-it {
   max-width: 400px;
   margin: 0 auto;
-  background-color: #0d052f79;
+  background-color: var(--background-color);
   backdrop-filter: blur(20px);
   display: grid;
   place-items: center;
@@ -773,8 +773,8 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-input:valid {
-  border: 5px solid var(--sec-color);
+.step2 input:valid {
+  border: 2px solid var(--sec-color);
 }
 
 button:disabled {

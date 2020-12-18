@@ -4,15 +4,16 @@ import { post } from "./rest";
 export default function Payment(props) {
   const form = useRef(null);
   const [enabled, setEnable] = useState(false);
-  function validate(evt) {
-    setEnable(form.current.checkValidity());
-  }
 
   function submit(e) {
     e.preventDefault();
     const payload = props.orders.filter((order) => order.amount > 0);
     console.log(payload);
     post(payload, console.log);
+  }
+
+  function validate(evt) {
+    setEnable(form.current.checkValidity());
   }
 
   return (

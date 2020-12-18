@@ -7,27 +7,29 @@ export default function Queue(props) {
   return (
     <>
       <h3>Currently serving</h3>
-      <p class="bold">{servingLength}</p>
+      <p className="bold" key={"servingLength"}>
+        {servingLength}
+      </p>
       <div className="serving-container">
-      {props.data.serving.map((person) => {
-        return (
-          <figure>
-            <img className="serving-rocket" src="serving-rocket.png" alt="serving rocket" />
-            <figcaption>Nr. {person.id}</figcaption>
-          </figure>
-        );
-      })}
+        {props.data.serving.map((person) => {
+          return (
+            <figure>
+              <img className="serving-rocket" src="serving-rocket.png" alt="serving rocket" />
+              <figcaption>Nr. {person.id}</figcaption>
+            </figure>
+          );
+        })}
       </div>
-<div className="queue-container">
-      <h3>Customers in line</h3>
-      <p class="bold">{queueLength}</p>
+      <div className="queue-container">
+        <h3>Customers in line</h3>
+        <p className="bold" key={"queueLength"}>
+          {queueLength}
+        </p>
 
-      <div className="rocket-container">
-      {props.data.queue.map((person) => {
-        return (
-            <img className="queue-rocket" src="queue-rocket.png" alt="queue rocket" />
-        );
-      })}
+        <div className="rocket-container">
+          {props.data.queue.map((person) => {
+            return <img className="queue-rocket" src="queue-rocket.png" alt="queue rocket" />;
+          })}
         </div>
       </div>
     </>
