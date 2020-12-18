@@ -9,10 +9,15 @@ function App() {
   const [data, setData] = useState({});
   const [beers, setBeers] = useState({});
   const [orders, setOrders] = useState([]);
+  const [step, setStep] = useState(0);
   const [page, setPage] = useState("home");
   const [theme, setTheme] = useState("night");
   function changeTheme() {
     setTheme(!theme);
+  }
+
+  function changeStep(step) {
+    setStep(step);
   }
 
   function changePage(page) {
@@ -55,7 +60,7 @@ function App() {
 
   return (
     <div className={theme ? "app night" : "app day"}>
-      {data.bar && beers[0] && <Main  changeTheme={changeTheme} changePage={changePage} page={page} orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
+      {data.bar && beers[0] && <Main changeStep={changeStep} step={step}  changeTheme={changeTheme} changePage={changePage} page={page} orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
       {!data.bar && <Loader />}
     </div>
   );
