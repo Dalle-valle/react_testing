@@ -1,9 +1,16 @@
+import { useRef, useState } from "react";
+
 export default function Payment() {
+  const form = useRef(null);
+  const [enabled, setEnable] = useState(false);
+  function validate(evt) {
+    setEnable(form.current.checkValidity());
+  }
   return (
-    <form>
+    <form ref={form}>
       <h2 className="information">Credit Card Information</h2>
 
-      <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" required />
+      <input className="cardname" type="text" name="smartname" placeholder="&nbsp;" required onChange={validate} />
       <label htmlFor="smartname" className="label1">
         Smart Name
       </label>
@@ -18,6 +25,7 @@ export default function Payment() {
         placeholder="&nbsp;"
         pattern="^[0-9]*$"
         required
+        onChange={validate}
       />
       <label htmlFor="smartnumber" className="label2">
         Smart Number
@@ -33,6 +41,7 @@ export default function Payment() {
         placeholder="&nbsp;"
         required
         pattern="^[0-9]*$"
+        onChange={validate}
       />
       <label htmlFor="expiry" className="label3">
         Expiry
@@ -48,14 +57,15 @@ export default function Payment() {
         placeholder="&nbsp;"
         required
         pattern="^[0-9]*$"
+        onChange={validate}
       />
       <label htmlFor="security" className="label4">
         Cvv
       </label>
 
-      {/* <button className="submit-button" type="submit" onClick={() => setStep(2)}>
+      <button className="submit-button" type="submit" disabled={!enabled}>
         Place Order
-      </button> */}
+      </button>
     </form>
   );
 }

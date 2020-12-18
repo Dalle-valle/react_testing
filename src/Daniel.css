@@ -381,11 +381,13 @@ input[type="number"] {
 .hide {
   visibility: hidden;
 }
-
+button:disabled {
+  opacity: 0.2;
+}
 .step2 input:valid {
   border: 5px solid hotpink;
 }
 
-/* input:not(:placeholder-shown) {
-  border: 2px solid green;
-} */
+input:valid {
+  border: 5px solid hotpink;
+}

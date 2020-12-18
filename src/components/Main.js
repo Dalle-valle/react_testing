@@ -61,7 +61,7 @@ c0-9.7,3.9-18.4,10.2-24.8C16.6,38.9,25.3,35,35,35h25C79.3,35,95,19.3,95,0z"
           {/* <Fullform beers={props.beers} orders={props.orders} orderChanged={props.orderChanged} /> */}
           <Buybeer beers={props.beers} orders={props.orders} orderChanged={props.orderChanged} prices={props.prices} />
           <Payment />
-          <Succes />
+          {/* <Succes /> */}
         </>
       ) : null}
     </main>
