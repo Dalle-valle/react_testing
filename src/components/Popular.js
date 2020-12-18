@@ -17,7 +17,7 @@ export default function Popular(props) {
   sortedBeer.forEach((obj) => {
     // check if duplicated
     if (cleanArr.some((beer) => beer.beer === obj.beer)) {
-      // console.log("findes");
+      //console.log("findes");
     } else {
       // else push all non duplicates to the clean array
       // console.log("findes ikke");
@@ -37,18 +37,16 @@ export default function Popular(props) {
     }
   }
   return (
-    <section className="popular-beers">
+    <>
       {popularBeers.map((beer) => {
         let beerIndex = popularBeers.findIndex((obj) => obj.beer === beer.beer);
         return (
-          <div>
-            <p className="beer-pop">
-              <span className="bold">{beerIndex + 1}. </span>
-              {beer.beer}
-            </p>
+          <div className="beer-pop">
+            <p className="bold">{beerIndex + 1}. </p>
+            <p>{beer.beer}</p>
           </div>
         );
       })}
-    </section>
+    </>
   );
 }

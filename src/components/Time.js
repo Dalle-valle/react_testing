@@ -18,7 +18,7 @@ export default function Time(props) {
   const paddedSec = seconds.toString().padStart(2, "0");
 
   return (
-    <div>
+    <>
       {closingTime > currentTime && currentTime > openingTime ? (
         <p>
           We are closing in
@@ -27,10 +27,12 @@ export default function Time(props) {
           </span>
         </p>
       ) : (
-        <p>We are 
+        <p>
+          We are
           <span className="time">Closed</span>
         </p>
       )}
-    </div>
+      <button onClick={() => props.changeTheme("night")} className="button-theme"></button>
+    </>
   );
 }

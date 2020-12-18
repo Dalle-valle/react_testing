@@ -3,17 +3,23 @@ import { checkInfo, checkBeers } from "./components/rest";
 import Main from "./components/Main";
 import Loader from "./components/Loader";
 import "./App.css";
-import "./Daniel.css";
+// import "./Daniel.css";
 
 function App() {
   const [data, setData] = useState({});
   const [beers, setBeers] = useState({});
   const [orders, setOrders] = useState([]);
+  const [step, setStep] = useState(0);
   const [page, setPage] = useState("home");
   const [theme, setTheme] = useState("night");
-  function themeActive() {
+  function changeTheme() {
     setTheme(!theme);
   }
+
+  function changeStep(step) {
+    setStep(step);
+  }
+
   function changePage(page) {
     setPage(page);
   }
@@ -53,12 +59,20 @@ function App() {
   }
 
   return (
-    <div className={theme ? "app day" : "app night"}>
-      <button onClick={() => themeActive("night")} className="button-theme">
-        Switch Theme
-      </button>
-
-      {data.bar && beers[0] && <Main changePage={changePage} page={page} orders={orders} beers={beers} orderChanged={orderChanged} data={data} />}
+    <div className={theme ? "app night" : "app day"}>
+      {data.bar && beers[0] && (
+        <Main
+          changeStep={changeStep}
+          step={step}
+          changeTheme={changeTheme}
+          changePage={changePage}
+          page={page}
+          orders={orders}
+          beers={beers}
+          orderChanged={orderChanged}
+          data={data}
+        />
+      )}
       {!data.bar && <Loader />}
     </div>
   );

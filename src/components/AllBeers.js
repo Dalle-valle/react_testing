@@ -10,7 +10,7 @@ export default function AllBeers(props) {
 
   const beerArray = props.beers;
   return (
-    <section className="all-beers">
+    <div className="all-beers">
       <h1>Beer information</h1>
       <p className="beer-desc">
         Here you can read about the selection of beers we brew. <br />
@@ -31,6 +31,6 @@ export default function AllBeers(props) {
           />
         );
       })}
-    </section>
+    </div>
   );
 }

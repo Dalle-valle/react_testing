@@ -30,9 +30,7 @@ export default function Home(props) {
               <br />
               <span>foobar!</span>
             </h1>
-            <p>
-              Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!
-            </p>
+            <p>Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!</p>
           </section>
 
           <section className="queue dash-comp">
@@ -51,7 +49,7 @@ export default function Home(props) {
           </section>
 
           <section className="dash-comp closing">
-            <Time data={props.data} />
+            <Time data={props.data} changeTheme={props.changeTheme} />
           </section>
 
           <section className="dash-buttons">
@@ -66,12 +64,7 @@ export default function Home(props) {
         <div className="">
           <WelcomeDropdown
             heading={"Welcome!"}
-            paragraph={
-              <p>
-                Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great
-                evening!
-              </p>
-            }
+            paragraph={<p>Welcome to FooBar! We have a selection of premium beers for you to enjoy. Feel free to order your beers below and have a great evening!</p>}
           />
 
           <section className="queue dash-comp">

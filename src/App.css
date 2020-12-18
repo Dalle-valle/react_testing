@@ -13,6 +13,7 @@ CUSTOM VARIABLES
   --desk-nav-color: #271f48;
   --border-color: #616182;
   --text-color: #9f9fbb;
+  --theme-button: url("night-icon.png");
 }
 
 /** Night Theme **/
@@ -25,6 +26,7 @@ CUSTOM VARIABLES
   --desk-nav-color: #271f48;
   --background-image-desk: url("bg-night.png");
   --background-image-mob: url("bg-night-mob.png");
+  --theme-button: url("night-icon.png");
 }
 
 /** Day Theme **/
@@ -37,6 +39,7 @@ CUSTOM VARIABLES
   --desk-nav-color: #cf8a5c;
   --background-image-desk: url("bg-day.png");
   --background-image-mob: url("bg-day-mob.png");
+  --theme-button: url("day-icon.png");
 }
 
 /* .button-theme {
@@ -95,6 +98,10 @@ p {
   max-width: 70ch;
 }
 
+.dash-grid .closing {
+  display: none;
+}
+
 figure {
   margin: 0;
 }
@@ -112,9 +119,16 @@ button {
 
 .button-theme {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10%;
+  left: 15px;
   z-index: 900;
+  height: 50px;
+  width: 50px;
+  background-image: var(--theme-button);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  transition: 0.3s;
 }
 
 .dashboard {
@@ -152,7 +166,11 @@ button {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.flex {
+  display: flex !important;
 }
 
 .block {
@@ -219,30 +237,30 @@ button {
   height: 100px;
 }
 
-/***************************
-CLOSING DISPLAY
-****************************/
-
-.closing {
-  margin: 15px 0 10px;
-  padding: 5px 0;
-  text-align: right;
-  height: 70px;
+.btn-arrow span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.closing p {
-  color: var(--primary-color);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 5px 10px;
-  line-height: 1.3;
+.btn-arrow span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: -5px;
+  right: -10px;
+  font-size: 1.5rem;
+  transition: 0.5s;
 }
 
-.time {
-  display: block;
-  font-family: bdr-mono, sans-serif;
-  font-weight: 400;
-  font-size: 1.375rem;
+.btn-arrow:hover span {
+  padding-right: 18px;
+}
+
+.btn-arrow:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 /***********************************
@@ -470,15 +488,39 @@ DASHBOARD BUTTONS
 ????
 ****************************/
 
-header,
-.main-grid {
+.header-grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
 }
 
 .logo {
+  grid-column: 1/2;
   margin: 10px 15px;
   cursor: pointer;
+}
+
+.closing {
+  margin: 15px 0 10px;
+  padding: 5px 0;
+  text-align: right;
+  height: 70px;
+  grid-column: 2/-1;
+}
+
+.closing p {
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  line-height: 1.3;
+}
+
+.time {
+  display: block;
+  font-family: bdr-mono, sans-serif;
+  font-weight: 400;
+  font-size: 1.375rem;
 }
 
 /***************************
@@ -524,7 +566,8 @@ nav li {
   cursor: pointer;
 }
 
-.nav-icon:hover {
+.nav-icon:hover,
+.button-theme:hover {
   transform-origin: center;
   transform: scale(1.2);
 }
@@ -570,7 +613,7 @@ ORDER
 **********/
 
 .order {
-  background-color: var(--order-color);
+  /* background-color: var(--order-color); */
   /* position: fixed; */
   bottom: 65px;
   left: 0;
@@ -608,7 +651,7 @@ ORDER
   border: none;
   border-radius: 50px;
   padding: 5px;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 .buttons button,
@@ -623,17 +666,90 @@ ORDER
   width: 20px;
 }
 
-.order.dash-comp {
+.order-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
-.order .buttons {
+.order .buttons,
+.back-button {
   padding: 10px;
   width: 100%;
   height: auto;
   font-size: 1.125rem;
+}
+/***********************
+FORM
+***********************/
+.check-wrapper,
+.step2 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.information {
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+.label1 {
+  pointer-events: none;
+  grid-column: 1;
+  grid-row: 2;
+}
+.cardname {
+  grid-column: 1/-1;
+  grid-row: 3;
+}
+.label2 {
+  pointer-events: none;
+  grid-column: 1;
+  grid-row: 4;
+}
+.cardnumber {
+  grid-column: 1/-1;
+  grid-row: 5;
+}
+.label3 {
+  pointer-events: none;
+  grid-column: 1;
+  grid-row: 6;
+}
+.expiry {
+  grid-column: 1;
+  grid-row: 7;
+  margin-right: 10px;
+}
+.label4 {
+  pointer-events: none;
+  grid-column: 2;
+  grid-row: 6;
+}
+
+.cvv {
+  grid-column: 2/-1;
+  margin-left: auto;
+  grid-row: 7;
+  width: 100%;
+}
+.submit-button {
+  grid-column: 1/-1;
+  grid-row: 9;
+  width: auto;
+}
+
+.wrap-it {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: var(--background-color);
+  backdrop-filter: blur(20px);
+  display: grid;
+  place-items: center;
+  height: 70vh;
+  border-radius: 10px;
 }
 
 /*Hides default arrows*/
@@ -643,12 +759,66 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  font-weight: 400;
+  background-color: var(--border-color);
+  color: var(--primary-color);
+  border: none;
+}
+
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
 
-@media only screen and (min-width: 1000px) {
+.step2 input:valid {
+  border: 2px solid var(--sec-color);
+}
+
+button:disabled {
+  background-color: grey;
+}
+
+input:focus {
+  outline: none;
+  /* border: 2px solid var(--primary-color); */
+}
+
+input[type="text"]:not(:placeholder-shown) + label,
+input[type="number"]:not(:placeholder-shown) + label {
+  transform: translate(15%, 40%) scale(1.1);
+  opacity: 1;
+  transition-timing-function: ease-out;
+  transition: 0.4s;
+  color: var(--primary-color);
+}
+
+label {
+  place-self: center start;
+  transform-origin: 0 100%;
+  transform: translate(20px, 36px);
+  font-family: rajdhani, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  opacity: 0.7;
+  color: var(--primary-color);
+
+  will-change: transform, opacity;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 7px 10px;
+  border-radius: 5px;
+  border-color: #cecece;
+  line-height: 1;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+@media only screen and (min-width: 765px) {
   /*************************
   GENEREL 
   *************************/
@@ -705,6 +875,10 @@ input[type="number"] {
     justify-content: center;
   }
 
+  .button-theme {
+    top: 30%;
+  }
+
   nav li {
     margin: 40px 0;
   }
@@ -744,6 +918,10 @@ input[type="number"] {
     padding: 0;
   }
 
+  .dash-grid .closing {
+    display: block;
+  }
+
   /*************************
   DASHBOARD GRID
   *************************/
@@ -781,7 +959,9 @@ input[type="number"] {
   }
 
   .beer-info,
-  .buy-beer {
+  .buy-beer,
+  .payment,
+  .wrap-it {
     margin-right: 40px;
     grid-column: 1/3;
     grid-row: 1/-1;

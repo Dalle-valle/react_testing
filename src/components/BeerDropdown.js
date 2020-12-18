@@ -20,7 +20,7 @@ export default function BeerDropdown(props) {
       <div className="beer-container" onClick={handlePlusOne}>
         <h2>
           {props.name}
-          <span className="plus-minus">{isPlus ? "+" : "-"}</span>
+          <span className={isPlus ? "arrow-down" : "arrow-up"}>&#8963;</span>
         </h2>
         <div className="beer-cat">
           <p>{props.cat}</p>
